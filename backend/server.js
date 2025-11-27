@@ -1,56 +1,57 @@
-import authRoutes from "./Features/Auth/authRoutes.js";
-import authorizationRoutes from "./Features/Authorization/authorizationRoutes.js";
-import adminRoutes from "./Features/Admin/adminRoutes.js";
-import inventoryRoutes from './Features/Inventory/inventoryRoutes.js';
-import reservationRoutes from './Features/Reservations/reservationRoutes.js';
-import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
 import db from "./config/database.js";
+
+// Importar rutas de Auth (Las demás se irán agregando conforme me pases los archivos)
+import authRoutes from "./Features/Auth/authRoutes.js";
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 const app = express();
-app.use(express.json()); // Permite parsear correctamente json en express
+
+app.use(express.json()); 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
+
+// Servir carpeta de imagenes estáticas
+app.use('/uploads', express.static('uploads'));
+
 app.use(
   cors({
-    origin: ["http://localhost:3000", 
-             "http://localhost:5173"],
+    origin: [
+        "http://localhost:3000", 
+        "http://localhost:5173", 
+        "http://gitat.grupolosifra.com",
+        "https://gitat.grupolosifra.com"
+    ],
     credentials: true,
   })
 );
 
-// funcion para verificar que la DB este encendida
 async function testDbConnection() {
   try {
-    // Consulta para verificar la conexion
     await db.query("SELECT 1");
-    console.log("✅ Conexión a la base de datos establecida correctamente.");
+    console.log("✅ Conexión a BD establecida.");
   } catch (error) {
-    //
-    console.error("No se pudo conectar a la base de datos:", error.message);
-    process.exit(1); // Detiene el proceso con un código de error
+    console.error("❌ Error DB:", error.message);
   }
 }
 
-//Función que prueba e inicia el servidor
+app.get('/api/health', (req, res) => {
+    res.json({ status: 'OK', msg: 'Backend GITAT Activo 🚀' });
+});
 
 async function startServer() {
-  await testDbConnection(); // prueba que la DB fucione
+  await testDbConnection(); 
 
   app.listen(PORT, () => {
-    console.log(`✅ Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`✅ Servidor corriendo en puerto ${PORT}`);
   });
 
-  app.use("/api/auth", authRoutes); // Ruta que maneja los recursos de autenticación
-  app.use("/api/verification", authorizationRoutes); // Ruta que maneja los recursos de autorización
-  app.use("/api/admin", adminRoutes); // Ruta que maneja los recursos de administrador
-  app.use("/api/inventory", inventoryRoutes); // Ruta que maneja los recursos de inventario
-  app.use('/api/reservation', reservationRoutes);
+  // Rutas activas
+  app.use("/api/auth", authRoutes); 
 }
 
-// Iniciar
 startServer();
