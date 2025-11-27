@@ -1,0 +1,13 @@
+### Dependencias ###
+node_modules/
+### Variables de entorno ###
+.env
+### Package files ###
+*.json
+### Docker compose ###
+docker-compose.yml
+### uploads ###
+*.jpg
+*.jpge
+*.png
+.DS_Store

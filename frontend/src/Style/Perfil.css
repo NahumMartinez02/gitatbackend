@@ -1,0 +1,129 @@
+/* CONTENEDOR PRINCIPAL */
+.perfil-container {
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 25px 35px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    font-family: "Inter", sans-serif;
+}
+
+/* TÍTULO */
+.perfil-container h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+/* FOTO + BOTÓN */
+.perfil-foto-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.perfil-foto {
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 3px solid #e6e6e6;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* BOTÓN CAMBIAR FOTO */
+.btn-upload {
+    background: #2f80ed;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-upload:hover {
+    background: #1a63c9;
+}
+
+/* FORMULARIO */
+.perfil-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 2 columnas */
+    gap: 14px 20px; /* fila, columna */
+    align-items: center;
+}
+
+/* LABEL */
+.perfil-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* INPUT */
+.perfil-form input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    background: #fafafa;
+    font-size: 14px;
+}
+
+.perfil-form input:focus {
+    border-color: #2f80ed;
+    background: #fff;
+    outline: none;
+}
+
+/* BOTÓN GUARDAR (ocupa toda la fila) */
+.perfil-form button {
+    grid-column: span 2;
+    padding: 12px;
+    margin-top: 5px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.perfil-form button:hover {
+    background: #1f8d4c;
+}
+
+/* MENSAJE */
+.perfil-msg {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    color: #2f80ed;
+}
+
+/* MODO RESPONSIVO */
+@media (max-width: 600px) {
+    .perfil-container {
+        padding: 20px 25px;
+    }
+
+    .perfil-form {
+        grid-template-columns: 1fr; /* una columna */
+    }
+
+    .perfil-form button {
+        grid-column: 1;
+    }
+
+    .perfil-foto-section {
+        flex-direction: column;
+    }
+
+    .perfil-foto {
+        width: 100px;
+        height: 100px;
+    }
+}

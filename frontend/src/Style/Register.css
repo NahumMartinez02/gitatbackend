@@ -1,0 +1,102 @@
+
+.Form-Cont {
+  background-color: whitesmoke;
+  width: 80vw;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  
+  padding: 30px;
+  gap: 0px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.tittle-Cont {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.input-field {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.password-input{
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.password-input .input-field {
+  margin-bottom: 0;
+  padding-right: 0;
+  justify-content: center;
+  width: 100%;
+}
+
+.toggle-visibility-btn {
+  position: static;
+  margin-left: 8px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  padding: 0 5px;
+}
+.Btn-C {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.Btn-C button {
+  background-color: #4caf50;
+  font-size: 18px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+} 
+.Btn-C button:hover {
+  background-color: #45a049;
+}
+
+#return {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+#return:hover {
+  text-decoration: underline;
+  color:#1c6db4;
+}
+
+@media (max-width: 768px) {
+  .Form-Cont {
+    width: 80vw;
+    border-radius: 0;
+    background-color: white;
+    box-shadow: none;
+  }
+  .Form-Cont h2 {
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+.Form-Cont h3{
+  font-size:25px;
+}
+.Btn-C button {   
+  font-size: 25px;
+}
+
+}

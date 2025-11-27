@@ -1,0 +1,255 @@
+body{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  background-color: #0a2e50;
+  background: linear-gradient(135deg, #0a2e50, #1e88e5, #4caf50);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 5%;
+}
+.main-cont{
+  width:100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.c1{
+  width:100%;
+  height: 100%;
+  display:flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: whitesmoke;
+  color:#333333;
+  border-radius: 15px;
+  border: 2px solid whitesmoke;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h2{
+  font-size:30px;
+}
+
+h3{
+  font-size:20px;
+}
+
+input{
+  width:60%;
+  height:40px;
+  background-color: transparent;
+  text-align: center;
+  color:#333333;
+  margin:10px;
+  padding:5px;
+  font-size:16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+input:hover{
+  border: 1px solid #1e88e5;
+}
+
+.Btn-c{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+}
+.Btn-c button:nth-child(1) {
+  background-color: #4caf50;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Btn-c button:nth-child(2) {
+  background-color: #1e88e5;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Btn-c button:hover {
+  opacity: 0.9;
+}
+#forgot-password {
+  margin-top: 15px;
+  color:#1e88e5;
+  font-weight: 600;
+  cursor: pointer;
+}
+#forgot-password:hover {
+  text-decoration: underline;
+  color:#1c6db4;
+}
+
+.c2{
+  width:100%;
+  height: 100%;
+  display:flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:whitesmoke;
+}
+
+.logo{
+  width:100%; 
+  height: auto;
+  margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+
+  body{
+  background:white;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  }
+
+  .main-cont{
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+    
+  justify-items: center;
+  }
+  .c1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: #333333;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+  h2{
+  font-size:45px;
+  margin-bottom:30%;
+}
+
+h3{
+  font-size:35px;
+}
+
+input{
+  width:100%;
+  height:50px;
+  background-color: transparent;
+  text-align: center;
+  color:#333333;
+  margin:10px;
+  padding:5px;
+  font-size:16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+input:hover{
+  border: 1px solid #1e88e5;
+}
+
+#forgot-password {
+  margin-top: 15px;
+  font-size: 20px;
+  color:#1e88e5;
+  cursor: pointer;
+}
+#forgot-password:hover {
+  text-decoration: underline;
+  color:#1c6db4;
+}
+
+.Btn-c{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.Btn-c button:nth-child(1) {
+  background-color: #4caf50;
+  font-size: 18px;
+  width: 300px;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Btn-c button:nth-child(2) {
+  background-color: #1e88e5;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Btn-c button:hover {
+  opacity: 0.9;
+  }
+  .c2{
+    display: none;
+  }
+
+}
+/* Agregué más css para el manejo del div de error y un ícono de carga en un botón*/
+.error-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  color: #dc2626;
+  font-size: 0.875rem;
+  animation: shake 0.5s ease-in-out;
+}
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+.error-icon {
+  flex-shrink: 0;
+}

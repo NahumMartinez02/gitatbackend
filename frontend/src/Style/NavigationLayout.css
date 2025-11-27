@@ -1,0 +1,95 @@
+/* No afectamos el body */
+.layout-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Botón hamburguesa */
+.hamburger-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 3000;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Líneas del ícono */
+.hamburger-btn .line {
+    width: 100%;
+    height: 4px;
+    background: black;
+    border-radius: 3px;
+    transition: 0.25s;
+}
+
+/* Petit efecto cuando el menú está abierto */
+.hamburger-btn .line.open:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn .line.open:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn .line.open:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menú popup con fondo blanco */
+.dropdown-menu {
+    position: fixed;
+    top: 70px; 
+    left: 20px;
+    width: 230px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 2500;
+}
+
+/* Cuando se abre */
+.dropdown-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Items */
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    margin: 15px 0;
+}
+
+.dropdown-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
